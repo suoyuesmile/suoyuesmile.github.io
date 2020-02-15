@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Suo from '../views/suo.vue'
+import Mine from '../views/mine.vue'
 import Home from '../views/home.vue'
 
 Vue.use(VueRouter)
@@ -15,6 +16,11 @@ const routes = [
     path: '/home',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/mine',
+    name: 'mine',
+    component: Mine
   }
 ]
 

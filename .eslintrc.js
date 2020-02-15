@@ -11,7 +11,8 @@ module.exports = {
     indent: ['error', 2, { MemberExpression: 'off' }],
     // allow paren-less arrow functions
     'arrow-parens': 0,
-    'no-loop-func': 2
+    'no-loop-func': 2,
+    'space-before-function-paren': [2, 'never']
     // allow async-await
   },
   parserOptions: {

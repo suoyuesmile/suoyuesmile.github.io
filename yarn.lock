@@ -5596,6 +5596,11 @@ istanbul-reports@^2.2.6:
   dependencies:
     handlebars "^4.1.2"
 
+ityped@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/ityped/-/ityped-1.0.3.tgz#78430ab45e4836f4e565ecbacd221e58d46b44b3"
+  integrity sha512-46Qnh3qs+6EJlWDHmvWRW6qiz5jFy2mkh9UvtTvQmLJMZIjKrdz4du68le7hLX4tAWCp6QTKiq/OuLv6huHxZg==
+
 javascript-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-2.0.0.tgz#ef750216ae66504ffd670b68c8b8aa07bdf7b588"
