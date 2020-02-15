@@ -28,11 +28,10 @@ export default {
     init('#love', {
       strings: [
         '今天是锁与颖相爱的' + this.loveTime.days + '天',
+        '我们的爱就像这星空',
+        '无穷无尽！',
         '愿我们能永远幸福快乐的在一起！',
-        '我爱你，王颖！永远爱你！',
-        '想陪你看流星!',
-        '想陪你看烟花!',
-        '想陪你看尽这世间的一切!'
+        '2020 我们也要好好在一起！'
       ],
       typeSpeed: 220, // default
       backSpeed: 100, // default
