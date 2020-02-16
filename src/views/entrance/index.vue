@@ -8,35 +8,32 @@
       :key="index"
       :style="{top: `${Math.round(Math.random() * windowHeight)}px`, left: `${Math.round(Math.random() * windowWidth)}px`,animationDuration: `${Math.round(Math.random() * 3000) + 3000}ms`,animationDelay:`${Math.round(Math.random() * 3000)}ms`}"
     )
-    sy-dialog.sy-dialog(
-      v-model="playMemory"
-      showCancelButton
-      confirmButtonText="穿梭"
-      cancelButtonText="跳过"
-      cancelButtonColor="#999999"
-      @confirm="handleConfirm"
-      @cancel="handleCancel"
-    )
-      .memory
-        img.memory__icon(:src="@require('@/assets/images/x.png')")
-        .memory__text 搭乘时光机回到过去
+    .spaceboat
+      img.spaceboat__icon(:src="require('@/assets/images/fly.png')")
+      .spaceboat__opt
+        .spaceboat__opt--start(@click="$router.push({name: 'start'})") 启动时光机
+        .spaceboat__opt--skip(@click="$router.push({name: 'index'})") 回家
 
 </template>
 
 <script>
+import Vue from 'vue'
 import { typewords } from '@/utils/ityped'
 import { calcTime } from '@/utils/monent'
+import VueAnime from 'vue-animejs'
+Vue.use(VueAnime)
 export default {
   mounted() {
     this.generateLoveTime()
-    this.print()
+    // this.print()
+    this.ufofly()
   },
   data() {
     return {
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       loveTime: {},
-      playMemory: false,
+      playMemory: true,
       words: ['你看这星空，它就像我对你的爱', '无穷无尽！', '2020 我们也要好好在一起！']
     }
   },
@@ -50,18 +47,33 @@ export default {
       const start = new Date('2014-07-12 00:00:00').getTime()
       this.setLoveDate(start)
     },
-    handleConfirm() {},
-    handleCancel() {},
-    print() {
-      const _this = this
-      const firstword = '笨蛋颖，今天是我们相爱的' + this.loveTime.days + '天'
-      const words = [firstword].concat(this.words)
-      typewords('#love', words, () => {
-        setTimeout(() => {
-          _this.playMemory = true
-        }, 1000)
+    handleConfirm() {
+
+    },
+    ufofly() {
+      const spaceboat = document.querySelectorAll('div.spaceboat')
+      const bodyHeight = document.body.clientHeight
+      this.$anime({
+        targets: spaceboat,
+        translateY: bodyHeight - 150,
+        translateX: 200,
+        scale: [0.2, 1],
+        delay: 1000,
+        loop: false,
+        duration: 20000
       })
-    }
+    },
+    handleCancel() {}
+    // print() {
+    //   const _this = this
+    //   const firstword = '笨蛋颖，今天是我们相爱的' + this.loveTime.days + '天'
+    //   const words = [firstword].concat(this.words)
+    //   typewords('#love', words, () => {
+    //     setTimeout(() => {
+    //       _this.playMemory = true
+    //     }, 1000)
+    //   })
+    // }
   }
 }
 </script>
@@ -82,13 +94,27 @@ export default {
     top: 500px;
     font-size: 16px;
   }
-  .sy-dialog {
-    .memory {
-      width: 200px;
-      height: 50px;
-      &__icon {
-        width: 50px;
-        height: 50px;
+  .spaceboat {
+    width: 275px;
+    height: 80px;
+    position: absolute;
+    left: -150px;
+    text-align: center;
+    &__icon {
+      width: 100px;
+      height: 100px;
+    }
+    &__opt {
+      color: #fff;
+      &--start {
+        float: left;
+        font-size: 10px;
+        margin-left: 80px;
+      }
+      &--skip {
+        float: left;
+        font-size: 10px;
+        margin-left: 30px;
       }
     }
   }

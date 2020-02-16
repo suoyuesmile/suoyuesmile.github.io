@@ -1,5 +1,5 @@
 <template>
-  <div class="mine">
+  <div class="start">
     <div id="love" class="love"></div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.mine {
+.start {
   width: 100%;
   height: 100%;
   background-size: 100% 100%;

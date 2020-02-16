@@ -1,6 +1,6 @@
-import { init, distroy } from 'ityped'
+import { init } from 'ityped'
 
-export const typewords = (el, words, callback) => {
+export const typewords = (el, words, onFinished) => {
   init(el, {
     strings: words,
     typeSpeed: 220,
@@ -10,9 +10,6 @@ export const typewords = (el, words, callback) => {
     loop: false,
     showCursor: false,
     cursorChar: '|',
-    onFinished: function() {
-      callback()
-      distroy()
-    }
+    onFinished: onFinished
   })
 }

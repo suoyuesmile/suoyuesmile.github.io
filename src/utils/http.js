@@ -34,7 +34,7 @@ export default axios
  * @param {*} url
  * @param {*} params
  */
-export function fetch (url, params = {}) {
+export function fetch(url, params = {}) {
   return new Promise((resolve, reject) => {
     axios
       .get(url, {
@@ -54,12 +54,12 @@ export function fetch (url, params = {}) {
  * @param {*} url
  * @param {*} data
  */
-export function post (
+export function post(
   url,
   data = {},
   config = {
     transformRequest: [
-      function (fData, headers) {
+      function(fData, headers) {
         headers['Content-Type'] = 'application/json'
         return JSON.stringify(fData)
       }
@@ -83,12 +83,12 @@ export function post (
  * @param {*} url
  * @param {*} data
  */
-export function patch (url, data = {}) {
+export function patch(url, data = {}) {
   return new Promise((resolve, reject) => {
     axios
       .patch(url, data, {
         transformRequest: [
-          function (fData, headers) {
+          function(fData, headers) {
             headers['Content-Type'] = 'application/json'
             return JSON.stringify(fData)
           }
@@ -105,7 +105,7 @@ export function patch (url, data = {}) {
   })
 }
 
-export function del (url, data) {
+export function del(url, data) {
   return new Promise((resolve, reject) => {
     axios.delete(url, { data }).then(
       (response) => {
@@ -119,7 +119,7 @@ export function del (url, data) {
 }
 
 // 上传图片
-export function postImage (url, data) {
+export function postImage(url, data) {
   return new Promise((resolve, reject) => {
     const formData = new FormData()
     const config = {

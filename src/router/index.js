@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import entrance from '../views/entrance'
+import App from '@/App'
 
 Vue.use(VueRouter)
 
@@ -34,15 +35,14 @@ const routes = [
     component: entrance
   },
   {
-    path: '/play',
-    name: 'play',
-    children: [
-      {
-        path: '',
-        name: '',
-        component: () => import('../views/play/start')
-      }
-    ]
+    path: '/start',
+    name: 'start',
+    component: () => import('../views/play/start.vue')
+  },
+  {
+    path: '/index',
+    name: 'index',
+    components: () => import('../views/index/index.vue')
   }
   // {
   //   path: '/start',
