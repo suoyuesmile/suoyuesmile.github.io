@@ -5,7 +5,7 @@ import store from './store'
 
 import '@/assets/styles/index.scss'
 import '@/utils/adapt'
-
+import './global'
 Vue.config.productionTip = false
 
 new Vue({

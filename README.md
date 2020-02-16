@@ -1,78 +1,31 @@
-# vue-h5-awsome
+# 锁与颖的倾城之恋
 
-## 相关技术
+## 时间线
 
-|     | 技术         | 类型          | 参考文档                                           时间 |
-| --- | ------------ | ------------- | ------------------------------------------------------- |
-| 1   | vue          | mvvm 框架     | https://cn.vuejs.org/index.html                         |
-| 2   | vue-cli4     | 脚手架        | https://github.com/vuejs/vue-cli/tree/v3#vue-cli--      |
-| 3   | vue-devtools | 调试工具      | https://github.com/vuejs/vue-devtools                   |
-| 4   | vue-router   | 路由          | https://router.vuejs.org/zh/                            |
-| 5   | vuex         | 状态管理      | https://vuex.vuejs.org/zh/                              |
-| 6   | sass         | CSS 预编译    | https://www.sasscss.com/getting-started/                |
-| 7   | vant         | 组件库        | https://youzan.github.io/vant/#/zh-CN/intro             |
-| 8   | axios        | 获取 API 数据 | https://github.com/axios/axios                          |
-| 9   | eslint       | 静态检查      | https://eslint.org/                                     |
-| 9   | pug          | 模版          | 自行研究                                                |
-| 9   | rem&pxToRem  | 屏幕适配      | https://github.com/suoyuesmile/suo-blog/blob/master/articals/h5/0002.md                                                |
-| 9   | jest         | 自动化测试    | 自行研究                                                |
-
-## 模版默认功能配置
-
-根据不同分支进行不同配置
-
-### master：所有分支的配置集合
-- adapt 动态更改 `html` 根字体大小
-- pxToRem 插件
-- sass
-- vue-router
-- vuex
-- eslint
-- pug
-- jest
-- vant
-
-### base: 基本 H5 响应式布局配置（rem）
-- adapt 动态更改 `html` 根字体大小
-- pxToRem 插件
-- sass
-- vue-router
-- vuex
-- eslint
-
-### feat-pug：在基础的功能上增加 pug 模版引擎
-
-### feat-jest：在基础的功能上增加 jest 单元测试，并增加 demo
-
-### feat-vant：在基础上增加 vant 组件库，并增加 demo
-
-
-
-
-## 项目启动
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn start
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your tests
-```
-yarn test
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-
-
+2014
+- 第一话：两个青年的相遇
+- 第二话：表白——我喜欢你，怎么办
+- 第三话：昭告天下——
+- 第四话：庆祝高考——有趣的场景——美好的恋爱
+- 第五话：大学——异地恋的开端
+- 第六话：你的生日——我们一起吃完整个蛋糕
+- 第七话：我的生日——时空交错的惊喜
+- 第八话：第一个寒假——热干面、锅盔完美的早餐——武汉
+2015
+- 第九话：第一个暑假——椰子、清补凉那南边的海岛——海南
+2016
+- 第十话：痛苦的分别
+2017
+- 第十一话：两种生活
+2018
+- 第十二话：你的名字
+2019
+- 第十三话：再次告白
+- 第十四话：重逢——多年未见的激动
+- 第十五话：飞向你的城市——结束了多年的异地
+- 第十六话：我们的小窝
+- 第十七话：许多第一次
+- 第十八话：JOJO的到来
+- 第十九话：被疫情分隔的我们
+- 第二十话：告别2019——期待2020
+2020
