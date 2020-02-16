@@ -7,9 +7,8 @@ import Vue from 'vue'
 // import appCell from '@/components/app-cell'
 // import appIcon from '@/components/app-icon'
 // import appCheckbox from '@/components/app-checkbox'
-// import appTab from '@/components/app-tab'
-// import appTabs from '@/components/app-tab/tabs'
-import syDialog from '@/components/sy-dialog'
+import appTab from '@/components/app-tab'
+import appTabs from '@/components/app-tab/tabs'
 // import appBack from '@/components/app-title-bar/back'
 // import appDialogNotify from '@/components/app-dialog/notify'
 
@@ -20,9 +19,8 @@ import syDialog from '@/components/sy-dialog'
 // Vue.component('app-cell', appCell)
 // Vue.component('app-checkbox', appCheckbox)
 // Vue.component('app-icon', appIcon)
-// Vue.component('app-tab', appTab)
-// Vue.component('app-tabs', appTabs)
-Vue.component('sy-dialog', syDialog)
+Vue.component('app-tab', appTab)
+Vue.component('app-tabs', appTabs)
 // Vue.component('app-back', appBack)
 // Vue.component('app-dialog-notify', appDialogNotify)
 

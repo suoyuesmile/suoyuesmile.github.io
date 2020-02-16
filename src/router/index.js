@@ -41,7 +41,7 @@ const routes = [
   {
     path: '/index',
     name: 'index',
-    components: () => import('../views/index/index.vue')
+    component: () => import('../views/index/index.vue')
   }
   // {
   //   path: '/start',

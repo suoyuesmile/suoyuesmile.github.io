@@ -5,15 +5,13 @@ module.exports = {
   },
   extends: ['plugin:vue/essential', 'standard'],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     quotes: ['error', 'single'],
     indent: ['error', 2, { MemberExpression: 'off' }],
     // allow paren-less arrow functions
     'arrow-parens': 0,
     'no-loop-func': 2,
-    'space-before-function-paren': [2, 'never']
-    // allow async-await
+    'space-before-function-paren': ['error', 'never'],
+    indent: ['error', 2, { SwitchCase: 1 }]
   },
   parserOptions: {
     parser: require.resolve('babel-eslint'),
