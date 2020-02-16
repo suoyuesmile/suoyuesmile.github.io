@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import entrance from '../views/entrance'
-import App from '@/App'
 
 Vue.use(VueRouter)
 

@@ -2,7 +2,7 @@
   .index
 </template>
 <script>
-import { init } from 'ityped'
+// import { init } from'ityped'
 export default {
   mounted() {
 

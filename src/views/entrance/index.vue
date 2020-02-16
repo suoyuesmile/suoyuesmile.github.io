@@ -1,6 +1,6 @@
 <template lang="pug">
   .entrance(ref="entrance")
-    .love(id="love" style="font-size: 16px;color: #aaa;")
+    .love(v-show="!hideWord" id="love" style="font-size: 16px;color: #aaa;")
     .star.comet
     .star(
       :class="index % 20 == 0 ? 'star--big' : index % 9 == 0 ? 'star--medium' : ''"
@@ -25,8 +25,7 @@ Vue.use(VueAnime)
 export default {
   mounted() {
     this.generateLoveTime()
-    // this.print()
-    this.ufofly()
+    this.print()
   },
   data() {
     return {
@@ -34,7 +33,8 @@ export default {
       windowWidth: window.innerWidth,
       loveTime: {},
       playMemory: true,
-      words: ['你看这星空，它就像我对你的爱', '无穷无尽！', '2020 我们也要好好在一起！']
+      hideWord: false,
+      words: ['你看这星空，它就像我对你的爱', '无穷无尽！', '我要开始召唤时光机啦', '带你穿梭到过去和未来！', '3', '2', '1']
     }
   },
   methods: {
@@ -55,25 +55,34 @@ export default {
       const bodyHeight = document.body.clientHeight
       this.$anime({
         targets: spaceboat,
-        translateY: bodyHeight - 150,
-        translateX: 200,
-        scale: [0.2, 1],
+        translateY: bodyHeight - 200,
+        keyframes: [
+          {translateX: 100, translateY: 100, scale: '0.1'},
+          {translateX: 150, translateY: 120, scale: '0.2'},
+          {translateX: 200, translateY: 180, scale: '0.1'},
+          {translateX: 300, translateY: 200, scale: '0.4'},
+          {translateX: 200, translateY: 250, scale: '0.5'},
+          {translateX: 350, translateY: 400, scale: '0.1'},
+          {translateX: 250, translateY: bodyHeight - 200, scale: '1.2'}
+        ],
+        opacity: [0.5, 1],
         delay: 1000,
         loop: false,
-        duration: 20000
+        duration: 10000
       })
     },
-    handleCancel() {}
-    // print() {
-    //   const _this = this
-    //   const firstword = '笨蛋颖，今天是我们相爱的' + this.loveTime.days + '天'
-    //   const words = [firstword].concat(this.words)
-    //   typewords('#love', words, () => {
-    //     setTimeout(() => {
-    //       _this.playMemory = true
-    //     }, 1000)
-    //   })
-    // }
+    handleCancel() {},
+    print() {
+      const _this = this
+      const firstword = '笨蛋颖，今天是我们相爱的' + this.loveTime.days + '天'
+      const words = [firstword].concat(this.words)
+      typewords('#love', words, () => {
+        setTimeout(() => {
+          _this.hideWord = true
+          _this.ufofly()
+        }, 1000)
+      })
+    }
   }
 }
 </script>
@@ -98,8 +107,9 @@ export default {
     width: 275px;
     height: 80px;
     position: absolute;
-    left: -150px;
+    left: -200px;
     text-align: center;
+    transform: scale(0.1);
     &__icon {
       width: 100px;
       height: 100px;
