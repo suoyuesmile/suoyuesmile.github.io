@@ -1,5 +1,7 @@
 <template lang="pug">
   .index
+    audio(autoplay)
+      source(:src="require('@/assets/audio/lovestory.mp3')" type="audio/mp3" autoplay preload)
     app-tabs
       app-tab.tab(v-for="(item, index) in memory" :title="item.year" :key="index")
         .memory-wrapper
