@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 // import { RadioGroup, CellGroup, CheckboxGroup, Field, PullRefresh, Sticky, Toast } from 'vant'
+import { Sticky } from 'vant'
 // import appButton from '@/components/app-button'
 // import appSearch from '@/components/app-search'
 // import appRadio from '@/components/app-radio'
@@ -29,5 +30,5 @@ Vue.component('app-tabs', appTabs)
 // Vue.use(CheckboxGroup)
 // Vue.use(Field)
 // Vue.use(PullRefresh)
-// Vue.use(Sticky)
+Vue.use(Sticky)
 // Vue.use(Toast)

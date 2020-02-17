@@ -7,7 +7,7 @@
         v-for="(cardbox, index) in goodsData"
         :key="index"
         :title="cardbox.title")
-        Banner.mb8(v-show="cardbox.topBanner")
+        //- Banner.mb8(v-show="cardbox.topBanner")
         .card-box--wrap(:style="{height: cardbox.maxHeight + 'px'}")
           Card.card-item(
             v-for="(item, index) in cardbox.list"
@@ -19,7 +19,7 @@
             :type="item.type"
             @click="$router.push({name: 'goods-detail'})"
             )
-        Banner(v-show="cardbox.bottomBanner")
+        //- Banner(v-show="cardbox.bottomBanner")
       app-footer-bar(:active-index="active")
 </template>
 <script>

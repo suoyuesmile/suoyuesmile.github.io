@@ -2,9 +2,11 @@
   van-tabs(
     v-bind="$attrs"
     v-on="$listeners"
+    sticky
     :line-width="lineWidth"
     :title-active-color="getThemeColor"
     background="transparent"
+    @scroll="handleScroll"
     swipeable
     )
     slot
@@ -31,6 +33,11 @@ export default {
   computed: {
     getThemeColor() {
       return getColor(this.theme)
+    }
+  },
+  methods: {
+    handleScroll({scrollTop, isFixed}) {
+      console.log(scrollTop, isFixed)
     }
   }
 }

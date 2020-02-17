@@ -4,8 +4,8 @@
       .cardbox__header__title.fl {{title}}
       .cardbox__header__link.fr(@click="$router.replace({name: target})")
         //- .cardbox__header__link__text 更多
-        .cardbox__header__link__icon
-          app-icon(name="home/right_arrow@2x" :size="15")
+        //- .cardbox__header__link__icon
+          //- app-icon(name="home/right_arrow@2x" :size="15")
     .cardbox__body
       slot
 </template>

@@ -1,6 +1,6 @@
 <template lang="pug">
   .index
-    app-tabs.tabs
+    app-tabs
       app-tab.tab(v-for="(item, index) in memory" :title="item.year" :key="index")
         .memory-wrapper
           .memory__play
@@ -71,6 +71,9 @@ export default {
   width: 100%;
   height: 100%;
   background: $bg-page;
+  .tabs {
+    position: relative;
+  }
   .memory-wrapper {
     height: 400px;
     .memory__play {
@@ -98,6 +101,9 @@ export default {
       border-top-left-radius: 16px;
       &__item {
         height: 48px;
+        &:active {
+          background: #eee;
+        }
         &__name {
           text-align: center;
           line-height: 48px;
