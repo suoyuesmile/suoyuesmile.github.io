@@ -5,8 +5,8 @@ import Vue from 'vue'
 // import appSearch from '@/components/app-search'
 // import appRadio from '@/components/app-radio'
 // import appCell from '@/components/app-cell'
-// import appIcon from '@/components/app-icon'
 // import appCheckbox from '@/components/app-checkbox'
+import appIcon from '@/components/app-icon'
 import appTab from '@/components/app-tab'
 import appTabs from '@/components/app-tab/tabs'
 // import appBack from '@/components/app-title-bar/back'
@@ -18,7 +18,7 @@ import appTabs from '@/components/app-tab/tabs'
 // Vue.component('app-radio', appRadio)
 // Vue.component('app-cell', appCell)
 // Vue.component('app-checkbox', appCheckbox)
-// Vue.component('app-icon', appIcon)
+Vue.component('app-icon', appIcon)
 Vue.component('app-tab', appTab)
 Vue.component('app-tabs', appTabs)
 // Vue.component('app-back', appBack)

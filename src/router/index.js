@@ -39,9 +39,26 @@ const routes = [
     component: () => import('../views/play/start.vue')
   },
   {
+    // 时光机
     path: '/index',
     name: 'index',
     component: () => import('../views/index/index.vue')
+  },
+  {
+    // 爱生活
+    path: '/life',
+    name: 'life',
+    component: () => import('../views/life/index.vue')
+  },
+  {
+    path: '/jojo',
+    name: 'jojo',
+    component: () => import('../views/jojo/index.vue')
+  },
+  {
+    path: '/days',
+    name: 'days',
+    component: () => import('../views/days/index.vue')
   }
   // {
   //   path: '/start',

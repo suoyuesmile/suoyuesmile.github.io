@@ -17,7 +17,7 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'orange'
+      default: 'red'
     }
   },
   computed: {

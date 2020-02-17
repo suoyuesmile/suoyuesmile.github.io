@@ -21,11 +21,11 @@ export default {
   props: {
     lineWidth: {
       type: Number,
-      default: 30
+      default: 40
     },
     theme: {
       type: String,
-      default: 'orange'
+      default: 'red'
     }
   },
   computed: {
@@ -39,18 +39,18 @@ export default {
 <style lang="scss" scoped>
 .van-tabs {
   ::v-deep .van-ellipsis {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 400;
     color: #000;
   }
   ::v-deep .van-tabs__line {
-    bottom: 20px;
+    bottom: 22px;
     border-radius: 2px;
-    background: linear-gradient(135deg, rgba(255, 207, 57, 1) 0%, rgba(255, 140, 0, 1) 100%) !important;
+    background: linear-gradient(135deg, $color-purple 0%, $color-red 100%) !important;
   }
-  ::v-deep .van-tab--active .van-ellipsis {
+  ::v-deep .van-tab--active {
     color: $color-orange;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 17px;
   }
 }

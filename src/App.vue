@@ -17,6 +17,11 @@ export default {
   },
   watch: {
     $route(to, from) {
+      const disabledNames = ['index', 'life', 'jojo', 'days']
+      const disabled = disabledNames.some((item) => (item === to.name))
+      if (disabled && from.name !== 'entrance') {
+        return
+      }
       this.slide = 'slide-top'
     }
   }
