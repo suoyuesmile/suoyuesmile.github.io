@@ -1,7 +1,7 @@
 <template lang="pug">
   van-swipe.swipe(
     :autoplay="10000"
-    indicator-color="white"
+    :show-indicators="false"
   )
     van-swipe-item.swipe__item
       img.swipe__item__img(
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 500px;
+$height: 316px;
 .swipe {
   height: $height;
   &__item {

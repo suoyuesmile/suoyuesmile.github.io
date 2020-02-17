@@ -2,14 +2,14 @@
   .card-wrap(
     v-on="$listeners"
   )
-    .card(:style="{height: isVertical ? '260px' : '125px'}")
+    .card(:style="{height: isVertical ? '260px' : '260px'}")
       img.card__cover(
         :src="require('@/assets/images/index/1.png')"
         :style="getCardCoverStyle"
         )
       .card__title {{title}}
       .card__desc {{desc}}
-      .card__tag {{tag}}
+      //- .card__tag {{tag}}
 </template>
 
 <script>
@@ -39,16 +39,17 @@ export default {
     getCardCoverStyle() {
       if (!this.isVertical) {
         return {
-          left: '85px',
+          left: '0px',
           top: '0px',
-          height: '128px'
+          width: '168px',
+          height: '200px'
         }
       }
       return {
         left: '5px',
         top: '118px',
-        width: '160px',
-        height: '143px'
+        width: '168px',
+        height: '200px'
       }
     }
   }
@@ -66,14 +67,14 @@ export default {
     overflow: hidden;
     &__cover {
       position: absolute;
-      left: 85px;
-      height: 125px;
+      left: 0px;
+      height: 200px;
     }
     &__title {
-      margin: 28px 0px 0px 10px;
-      font-size: 17px;
-      font-weight: 500;
-      color: #ff5959;
+      margin: 210px 0px 0px 10px;
+      font-size: 15px;
+      font-weight: 400;
+      // color: #ff5959;
     }
     &__desc {
       margin: 8px 0px 0px 10px;
