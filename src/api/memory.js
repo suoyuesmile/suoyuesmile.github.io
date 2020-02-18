@@ -38,6 +38,10 @@ export const memory = [
         title: '告别2019——期待2020',
         time: '2020年那个元宵',
         words: ['我爱你，笨蛋颖', '永远爱你'],
+        song: {
+          id: '',
+          name: ''
+        },
         img: [],
         detail: []
       },
