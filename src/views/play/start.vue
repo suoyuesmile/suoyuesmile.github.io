@@ -16,13 +16,13 @@ export default {
         '怎么办，我喜欢你！',
         '我俩命运的齿轮从此滚动起来...'
       ],
-      typeSpeed: 220, // default
-      backSpeed: 100, // default
-      startDelay: 1000, // default
-      backDelay: 500, // default
-      loop: false, // default
-      showCursor: false, // default
-      cursorChar: '|', // default
+      typeSpeed: 220,
+      backSpeed: 100,
+      startDelay: 1000,
+      backDelay: 500,
+      loop: false,
+      showCursor: false,
+      cursorChar: '|',
       onFinished: function() {
         setTimeout(() => {
           _this.$router.push({ name: 'establish' })

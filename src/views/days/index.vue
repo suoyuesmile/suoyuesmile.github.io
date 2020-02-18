@@ -1,11 +1,11 @@
 <template lang="pug">
   .index
-    p 123
+    AppCalendar
     app-footer-bar(:active-index="active")
 </template>
 <script>
 import AppFooterBar from '@/components/app-footer-bar'
-
+import AppCalendar from '@/components/app-calendar'
 export default {
   data() {
     return {
@@ -15,7 +15,8 @@ export default {
   mounted() {
   },
   components: {
-    AppFooterBar
+    AppFooterBar,
+    AppCalendar
   }
 }
 </script>

@@ -1,10 +1,10 @@
 <template lang="pug">
-  van-tabs(
+  van-tabs.van-tabs(
     v-bind="$attrs"
     v-on="$listeners"
     sticky
     :line-width="lineWidth"
-    :title-active-color="getThemeColor"
+    title-active-color="#fff"
     @scroll="handleScroll"
     background="trasparent"
     swipeable
@@ -45,20 +45,23 @@ export default {
 
 <style lang="scss" scoped>
 .van-tabs {
+  ::v-deep .van-tabs__wrap {
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
+  }
   ::v-deep .van-ellipsis {
     z-index: 1000;
     font-size: 14px;
     font-weight: 400;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6);
+    color: $color-weak;
+    background: rgba(100, 100, 100, 0.6);
   }
   ::v-deep .van-tabs__line {
     bottom: 22px;
     border-radius: 2px;
-    background: linear-gradient(135deg, $color-purple 0%, $color-red 100%) !important;
+    background: #fff;
   }
   ::v-deep .van-tab--active {
-    color: $color-orange;
+    color: $color-weak;;
     font-weight: 400;
     font-size: 17px;
   }

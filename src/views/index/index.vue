@@ -1,7 +1,5 @@
 <template lang="pug">
   .index
-    //- audio(id="music1" controls="controls" autoplay="autoplay" preload hidden)
-    //-   source(src="http://music.163.com/song/media/outer/url?id=1319520140.mp3")
     app-tabs
       app-tab.tab(v-for="(item, index) in memory" :title="item.year" :key="index")
         .memory-wrapper

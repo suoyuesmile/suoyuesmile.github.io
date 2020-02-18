@@ -1,7 +1,6 @@
 <template lang="pug">
   .entrance(ref="entrance")
-    audio(id="music1" controls="controls" autoplay="autoplay" preload hidden)
-      source(src="http://music.163.com/song/media/outer/url?id=1319520140.mp3")
+    app-music(id="1319520140", name="晚星")
     .love(v-show="!hideWord" id="love" style="font-size: 16px;color: #aaa;")
     .star.comet
     .star(
@@ -15,7 +14,6 @@
       .spaceboat__opt
         .spaceboat__opt--start(@click="$router.push({name: 'start'})") 启动时光机
         .spaceboat__opt--skip(@click="$router.push({name: 'index'})") 回家
-
 </template>
 
 <script>
