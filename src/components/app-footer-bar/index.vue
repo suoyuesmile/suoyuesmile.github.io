@@ -87,7 +87,7 @@ export default {
 <style lang="scss" scoped>
 .van-tabbar {
   height: 50px;
-  background: $bg-page-light!important;
+  background: $bg-theme!important;
   ::v-deep &-item {
     &__text {
       font-size: 10px;

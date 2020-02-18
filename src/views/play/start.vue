@@ -25,7 +25,7 @@ export default {
       cursorChar: '|', // default
       onFinished: function() {
         setTimeout(() => {
-          _this.$router.push({name: 'establish'})
+          _this.$router.push({ name: 'establish' })
         }, 1000)
       }
     })

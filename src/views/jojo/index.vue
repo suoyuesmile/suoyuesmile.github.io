@@ -3,11 +3,10 @@
     .wrapper
       swiper
       img.swiper-cover(:src="require('@/assets/images/cover.png')")
-      Cardbox.card-box.mt10(
-        v-for="(cardbox, index) in goodsData"
+      Cardbox.card-box.mt16(
+        v-for="(cardbox, index) in jojoData"
         :key="index"
         :title="cardbox.title")
-        //- Banner.mb8(v-show="cardbox.topBanner")
         .card-box--wrap(:style="{height: cardbox.maxHeight + 'px'}")
           Card.card-item(
             v-for="(item, index) in cardbox.list"
@@ -16,10 +15,8 @@
             :title="item.title"
             :desc="item.desc"
             :tag="item.tag"
-            :type="item.type"
             @click="$router.push({name: 'goods-detail'})"
             )
-        //- Banner(v-show="cardbox.bottomBanner")
       app-footer-bar(:active-index="active")
 </template>
 <script>
@@ -27,37 +24,37 @@ import swiper from './components/swiper'
 import AppFooterBar from '@/components/app-footer-bar'
 import Cardbox from './components/card/cardbox'
 import Card from './components/card/card'
-import { jojoData } from '@/utils/jojo'
+import { jojo } from '@/api/jojo'
 export default {
   data() {
     return {
       active: 2,
-      goodsData: []
+      jojoData: []
     }
   },
   methods: {
     computeWaterFallStyle() {
-      this.goodsData = jojoData
-      this.goodsData.forEach((cardbox, cardIndex) => {
+      this.jojoData = jojo
+      this.jojoData.forEach((cardbox, cardIndex) => {
         let leftWeight = 0
         let rightWeight = 0
         cardbox.list.forEach((item, index) => {
-          const weight = item.type === 'vertical' ? 2 : 1
+          const weight = 1
           if (index === 0) {
-            this.goodsData[cardIndex].list[index].left = 0
-            this.goodsData[cardIndex].list[index].top = 0
+            this.jojoData[cardIndex].list[index].left = 0
+            this.jojoData[cardIndex].list[index].top = 0
             leftWeight = leftWeight + weight
           } else {
             if (rightWeight < leftWeight) {
-              this.goodsData[cardIndex].list[index].left = 175
-              this.goodsData[cardIndex].list[index].top = rightWeight * 268
+              this.jojoData[cardIndex].list[index].left = 175
+              this.jojoData[cardIndex].list[index].top = rightWeight * 268
               rightWeight = rightWeight + weight
-              this.goodsData[cardIndex].maxHeight = rightWeight * 268
+              this.jojoData[cardIndex].maxHeight = rightWeight * 268
             } else {
-              this.goodsData[cardIndex].list[index].left = 0
-              this.goodsData[cardIndex].list[index].top = leftWeight * 268
+              this.jojoData[cardIndex].list[index].left = 0
+              this.jojoData[cardIndex].list[index].top = leftWeight * 268
               leftWeight = leftWeight + weight
-              this.goodsData[cardIndex].maxHeight = leftWeight * 268
+              this.jojoData[cardIndex].maxHeight = leftWeight * 268
             }
           }
         })
@@ -86,20 +83,20 @@ export default {
     background: $bg-page;
     padding-bottom: 60px;
     .swiper-cover {
-        position: absolute;
-        top: 210px;
-        height: 15px;
-        width: 375px;
-        z-index: 200;
+      position: absolute;
+      top: 211px;
+      height: 15px;
+      width: 375px;
+      z-index: 200;
     }
     .card-box {
-        &--wrap {
-          position: relative;
-          .card-item {
-            position: absolute;
-          }
+      &--wrap {
+        position: relative;
+        .card-item {
+          position: absolute;
         }
       }
+    }
   }
 }
 </style>

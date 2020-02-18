@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 316px;
+$height: 456px;
 .swipe {
   height: $height;
   &__item {

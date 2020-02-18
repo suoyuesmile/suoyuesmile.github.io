@@ -14,7 +14,6 @@
     app-footer-bar(:active-index="active")
 </template>
 <script>
-import { timeline } from '@/utils/timeline'
 import AppFooterBar from '@/components/app-footer-bar'
 
 export default {
@@ -22,19 +21,19 @@ export default {
     return {
       tabsData: [],
       active: 1,
-      foodData: [{
-        name: '料理次数',
-        value: '120'
-      }, {
-        name: '料理种类',
-        value: '30'
-      }
+      foodData: [
+        {
+          name: '料理次数',
+          value: '120'
+        },
+        {
+          name: '料理种类',
+          value: '30'
+        }
       ]
     }
   },
-  mounted() {
-    this.tabsData = timeline
-  },
+  mounted() {},
   components: {
     AppFooterBar
   }
@@ -53,6 +52,6 @@ export default {
     //     }
     //   }
     // }
-    }
+  }
 }
 </style>

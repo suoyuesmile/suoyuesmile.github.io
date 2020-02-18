@@ -38,7 +38,8 @@ export const memory = [
         title: '告别2019——期待2020',
         time: '2020年那个元宵',
         words: ['我爱你，笨蛋颖', '永远爱你'],
-        img: []
+        img: [],
+        detail: []
       },
       {
         id: 19,
@@ -193,7 +194,7 @@ export const memory = [
       {
         id: 4,
         name: '第4话',
-        title: '庆祝高考——有趣的场景——美好的恋爱',
+        title: '庆祝高考——美好的恋爱',
         time: '2015年那个初夏',
         words: [],
         img: []

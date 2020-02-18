@@ -1,4 +1,4 @@
-export const jojoData = [
+export const jojo = [
   {
     title: '调皮的JOJO',
     list: [

@@ -1,7 +1,7 @@
 <template lang="pug">
   .index
-    audio(autoplay)
-      source(:src="require('@/assets/audio/lovestory.mp3')" type="audio/mp3" autoplay preload)
+    //- audio(id="music1" controls="controls" autoplay="autoplay" preload hidden)
+    //-   source(:src="require('@/assets/audio/lovestory.ogg')")
     app-tabs
       app-tab.tab(v-for="(item, index) in memory" :title="item.year" :key="index")
         .memory-wrapper
@@ -12,7 +12,7 @@
             li.memory__item.fix(
               v-for="(story, index) in item.timeline"
               :key="index"
-              @click="handleClickMemory(story)"
+              @click="handleEnterStory(story)"
               )
               .memory__item__icon.fl(v-show="story.id === memoryActive")
                 app-icon.memory__item__icon__app-icon(
@@ -24,32 +24,39 @@
               .memory__item__cell.fl
                 .memory__item__cell__title {{story.title}}
                 .memory__item__cell__time {{story.time}}
+              .memory__item__opt.fr
+                app-icon.memory__item__opt__app-icon(
+                  :width="24"
+                  :height="24"
+                  :name="story.id !== memoryActive ? 'index/bofang' : 'index/bofanging'"
+                  @click="handleClickMemory(story)"
+                )
     app-footer-bar(:active-index="active")
 </template>
 <script>
 import { typewords } from '@/utils/ityped'
-import { memory } from '@/utils/memory'
+import { memory } from '@/api/memory'
 import swiper from './components/swiper'
-import { timeline } from '@/utils/timeline'
 import AppFooterBar from '@/components/app-footer-bar'
 
 export default {
   data() {
     return {
-      tabsData: [],
       active: 0,
       memoryActive: -1,
       memory: {}
     }
   },
   mounted() {
-    this.tabsData = timeline
     this.memory = memory
   },
   methods: {
     handleClickMemory(story) {
       this.memoryActive = story.id
       this.print(story.words)
+    },
+    handleEnterStory(story) {
+
     },
     print(words) {
       this.clearWord()
@@ -72,15 +79,21 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  background: $bg-page;
+  // .top-area {
+  //   height: 64px;
+  //   background: $color-red;
+  //   color: #fff;
+
+  // }
   .tabs {
+    // height: 64px;
     position: relative;
   }
   .memory-wrapper {
-    height: 400px;
+    margin-top: -44px;
     .memory__play {
       position: relative;
-      height: 316px;
+      height: 456px;
       .love {
         bottom: 30px;
         left: 50px;
@@ -94,7 +107,7 @@ export default {
     .memory {
       margin-top: -16px;
       padding-top: 16px;
-      height: 100%;
+      // height: 100%;
       width: 100%;
       position: absolute;
       z-index: 1000px;
@@ -105,6 +118,9 @@ export default {
         height: 48px;
         &:active {
           background: #eee;
+        }
+        &:last-child {
+          margin-bottom: 56px;
         }
         &__name {
           text-align: center;
@@ -117,18 +133,18 @@ export default {
           padding-top: 10px;
           width: 90px;
           &__app-icon {
-            animation: round 5s linear infinite;
-            @keyframes round
+            filter:drop-shadow(0px 0px 1px rgb(200,20,20));
+            animation: heart-hits 1.2s linear infinite;
+            @keyframes heart-hits
             {
-              0%   {transform: rotateY(0deg)}
-              25%  {transform: rotateY(90deg)}
-              50%  {transform: rotateY(180deg)}
-              25%  {transform: rotateY(270deg)}
-              100% {transform: rotateY(360deg)}
+              0%   {transform: scale(1)}
+              25%  {transform: scale(1.5)}
+              100% {transform: scale(1)}
             }
           }
         }
         &__cell {
+          // width: 200px;
           &__title {
             margin-top: 6px;
             line-height: 18px;
@@ -140,6 +156,11 @@ export default {
             font-size: 12px;
             color: $color-pl;
           }
+        }
+        &__opt {
+          text-align: center;
+          padding-top: 12px;
+          margin-right: 20px;
         }
       }
     }

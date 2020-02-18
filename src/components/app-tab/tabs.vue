@@ -5,8 +5,8 @@
     sticky
     :line-width="lineWidth"
     :title-active-color="getThemeColor"
-    background="transparent"
     @scroll="handleScroll"
+    background="trasparent"
     swipeable
     )
     slot
@@ -46,9 +46,11 @@ export default {
 <style lang="scss" scoped>
 .van-tabs {
   ::v-deep .van-ellipsis {
+    z-index: 1000;
     font-size: 14px;
     font-weight: 400;
-    color: #000;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
   }
   ::v-deep .van-tabs__line {
     bottom: 22px;
