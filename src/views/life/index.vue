@@ -43,15 +43,5 @@ export default {
 .index {
   width: 100%;
   height: 100%;
-  .tabs {
-    // padding: 70px 0 0 0;
-    // background: $bg-page;
-    // .tab-content {
-    //   .goods-list {
-    //     &-item {
-    //     }
-    //   }
-    // }
-  }
 }
 </style>
