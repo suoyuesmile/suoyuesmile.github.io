@@ -88,10 +88,10 @@ export default {
     position: relative;
   }
   .memory-wrapper {
-    margin-top: -44px;
+    margin-top: 0px;
     .memory__play {
       position: relative;
-      height: 456px;
+      height: 406px;
       .love {
         bottom: 30px;
         left: 50px;
@@ -103,9 +103,10 @@ export default {
       }
     }
     .memory {
+      box-shadow: 0 -.5em 1.2em rgba(0, 0, 0, 0.6);
       margin-top: -16px;
       padding-top: 16px;
-      // height: 100%;
+      height: 100%;
       width: 100%;
       position: absolute;
       z-index: 1000px;

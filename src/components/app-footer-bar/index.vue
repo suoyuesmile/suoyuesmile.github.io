@@ -88,6 +88,7 @@ export default {
 .van-tabbar {
   height: 50px;
   background: $bg-theme!important;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 .5em 1.2em rgba(0, 0, 0, 0.6);
   ::v-deep &-item {
     &__text {
       font-size: 10px;

@@ -5,7 +5,6 @@
     sticky
     :line-width="lineWidth"
     title-active-color="#fff"
-    @scroll="handleScroll"
     background="trasparent"
     swipeable
     )
@@ -34,11 +33,6 @@ export default {
     getThemeColor() {
       return getColor(this.theme)
     }
-  },
-  methods: {
-    handleScroll({scrollTop, isFixed}) {
-      console.log(scrollTop, isFixed)
-    }
   }
 }
 </script>
@@ -46,14 +40,17 @@ export default {
 <style lang="scss" scoped>
 .van-tabs {
   ::v-deep .van-tabs__wrap {
+    height: 50px;
+    z-index: 1000;
     box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
   }
   ::v-deep .van-ellipsis {
+    background: rgba(100, 100, 100, 1);
     z-index: 1000;
+    line-height: 50px;
     font-size: 14px;
     font-weight: 400;
     color: $color-weak;
-    background: rgba(100, 100, 100, 0.6);
   }
   ::v-deep .van-tabs__line {
     bottom: 22px;
@@ -62,8 +59,8 @@ export default {
   }
   ::v-deep .van-tab--active {
     color: $color-weak;;
-    font-weight: 400;
-    font-size: 17px;
+    font-weight: 500;
+    font-size: 20px;
   }
 }
 </style>

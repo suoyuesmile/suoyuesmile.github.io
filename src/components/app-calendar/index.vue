@@ -74,11 +74,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $cell-width: 48px;
 $cell-heigth: 36px;
 .app-calendar {
   background: #f7ebea;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
   width: 350px;
   margin: 20px auto;
   padding-bottom: 8px;
