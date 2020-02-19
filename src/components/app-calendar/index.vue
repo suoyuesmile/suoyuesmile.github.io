@@ -5,8 +5,11 @@
       span {{year}}年
     .weeks
       .weeks__cell.dib(v-for="(title, index) in weekTitleList" :key="index") {{title}}
-    .days(@touchstart="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd")
-      .days__cell.dib(ref="days" v-for="index in getMonthDays()" :key="index" :style="{marginLeft: index === 1 ? (getWeekInMonth(year, month) - 1) * 48 + 'px' : '0px'}") {{index}}
+    v-touch.days(ref="days"
+      @swipeleft="handleChangeNextMonth"
+      @swiperight="handleChangeLastMonth")
+      .days__cell.dib(v-for="index in getMonthDays(year, month)" :key="index" :style="{marginLeft: index === 1 ? (getWeekInMonth(year, month) - 1) * 48 + 'px' : '0px'}")
+        .days__cell__text(:class="{'days__cell__text--active': getActiveDay(index), 'days__cell__text--disabled': getDisabledDay(index)}") {{index}}
 </template>
 
 <script>
@@ -18,10 +21,7 @@ export default {
       weekTitleList: ['一', '二', '三', '四', '五', '六', '日'],
       today: '',
       year: '',
-      month: '',
-      day: '',
-      startX: '',
-      moveX: ''
+      month: ''
     }
   },
   mounted() {
@@ -35,12 +35,24 @@ export default {
       this.day = today.getDate()
       this.today = this.year + '-' + (this.month < 10 ? '0' + this.month : this.month) + '-' + (this.day < 10 ? '0' + this.day : this.day)
     },
+    getDisabledDay(index) {
+      const today = new Date()
+      const curYear = today.getFullYear()
+      const curMonth = today.getMonth() + 1
+      return this.year > curYear || this.year === curYear && (this.month > curMonth || this.month === curMonth && index > this.day)
+    },
+    getActiveDay(index) {
+      const today = new Date()
+      const curYear = today.getFullYear()
+      const curMonth = today.getMonth() + 1
+      return curYear === this.year && curMonth === this.month && this.day === index
+    },
     getWeekInMonth(year, month) {
       const weekDay = new Date(year + '/' + month + '/' + '01').getDay()
       return weekDay || 7
     },
-    getMonthDays() {
-      return new Date(2019, 2, 0).getDate()
+    getMonthDays(year, month) {
+      return new Date(year, month, 0).getDate()
     },
     handleChangeLastMonth() {
       if (this.month === 1) {
@@ -57,28 +69,6 @@ export default {
       } else {
         this.month = this.month + 1
       }
-    },
-    handleTouchStart(event) {
-      if (event) {
-        event.preventDefault()
-      }
-      if (event.touches && event.touches.length) {
-        this.startX = event.touches[0].screenX
-      }
-    },
-    handleTouchMove(event) {
-      if (!event.touches || !event.touches.length) {
-        return
-      }
-      if (event.touches[0].screenX - this.startX > 30) {
-        this.handleChangeLastMonth()
-      }
-      if (event.touches[0].screenX - this.startX < -30) {
-        this.handleChangeNextMonth()
-      }
-    },
-    handleTouchEnd(event) {
-      console.log(event)
     }
   }
 }
@@ -94,6 +84,7 @@ $cell-heigth: 36px;
   padding-bottom: 8px;
   padding-top: 4px;
   border-radius: 8px;
+  overflow: hidden;
   .today-title {
     height: 30px;
     line-height: 30px;
@@ -118,9 +109,21 @@ $cell-heigth: 36px;
       font-size: 12px;
       font-weight: 500;
       text-align: center;
-      line-height: $cell-heigth;
       width: $cell-width;
       height: $cell-heigth;
+      &__text {
+        margin: 8px auto;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 50%;
+        &--active {
+          background: $color-pl;
+        }
+        &--disabled {
+          color: $color-pl;
+        }
+      }
     }
   }
 }
