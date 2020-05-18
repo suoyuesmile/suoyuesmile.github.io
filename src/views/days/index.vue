@@ -13,14 +13,14 @@
       span.lovetime--text 秒
     .memory-days.fix
       .memory-day.fl.ml8(
-        v-for="(item, index) in memorydays"
+        v-for="(item, index) in memorydaysList"
         :key="index"
         @click="selectedCard = index"
       )
         .memory-day--common.memory-day--front(:style="index === selectedCard ? 'transform: rotateY(-180deg);': ''")
           .memory-day--front__text {{item.name}}
           .memory-day--front__count
-            span.memory-day--front__count--num 123
+            span.memory-day--front__count--num {{item.days}}
             span.memory-day--front__count--text 天
         img.memory-day--common.memory-day--back(
           :style="{transform: index === selectedCard ? 'rotateY(-360deg)': 'rotateY(-180deg)'}"
@@ -39,7 +39,7 @@ export default {
     return {
       active: 3,
       lovetime: {},
-      memorydays: [],
+      memorydaysList: [],
       selectedCard: ''
     }
   },
@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     getLoveTime() {
-      const start = new Date('2014-7-12 00:00:00').getTime()
+      const start = new Date('2014-07-12 00:00:00').getTime()
       const distance = new Date().getTime() - start
       return calcTime(distance)
     },
@@ -58,11 +58,30 @@ export default {
         this.lovetime = this.getLoveTime()
       }, 1000)
     },
+    nowDateEnd(date) {
+      const now = new Date()
+      const currentMonth = now.getMonth() + 1
+      const currentDay = now.getDate()
+      const month = parseFloat(date.time.slice(5, 7))
+      const day = parseFloat(date.time.slice(8, 10))
+      if (month === currentMonth && day === currentDay) {
+        return now
+      }
+      if (month === currentMonth && day > currentDay) {
+        return new Date(String(now.getFullYear()) + '-' + month + '-' + day)
+      }
+      if (month > currentMonth) {
+        return new Date(String(now.getFullYear()) + '-' + month + '-' + day)
+      }
+      return new Date(now.getFullYear() + 1 + '-' + month + '-' + day)
+    },
     setMemoryDays() {
-      // const memoryDaysList = memoryDays
-      this.memorydays = memoryDays
-      // memoryDaysList.forEach((item, index, arr) => {
-      // })
+      this.memorydaysList = memoryDays
+      this.memorydaysList.forEach((item, index, arr) => {
+        const end = this.nowDateEnd(item)
+        const distance = end - new Date().getTime()
+        this.memorydaysList[index].days = calcTime(distance).days
+      })
     }
   },
   components: {

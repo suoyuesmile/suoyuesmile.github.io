@@ -33,6 +33,42 @@ export const memory = [
     year: '2020',
     timeline: [
       {
+        id: 23,
+        name: '第23话',
+        title: '锁颖的小宇宙，这是给你的礼物',
+        time: '2020年5月20日',
+        words: ['今天是一个新起点', '我们的二人世界再次回归！', '520 快乐'],
+        song: {
+          id: '',
+          name: ''
+        },
+        img: []
+      },
+      {
+        id: 22,
+        name: '第22话',
+        title: '小小的心思、大大的委屈',
+        time: '2020年5月8日',
+        words: ['很快就会过去', '谁都不能侵占我们的二人世界'],
+        song: {
+          id: '',
+          name: ''
+        },
+        img: []
+      },
+      {
+        id: 21,
+        name: '第21话',
+        title: '回到杭州，重新开始',
+        time: '2020年3月24',
+        words: ['我爱你，笨蛋颖', '永远爱你'],
+        song: {
+          id: '',
+          name: ''
+        },
+        img: []
+      },
+      {
         id: 20,
         name: '第20话',
         title: '告别2019——期待2020',
@@ -50,8 +86,8 @@ export const memory = [
   {
     year: '2019',
     timeline: [
-      { id: 18, name: '第18话', title: 'JOJO的到来', time: '2020年那个元宵', words: ['我爱你，笨蛋颖', '永远爱你'], img: [] },
-      { id: 17, name: '第17话', title: '许多第一次', time: '2020-02-01', words: ['你好呀'], img: [] },
+      { id: 17, name: '第18话', title: '三亚风光好', time: '2019-10-01', words: ['你好呀'], img: [] },
+      { id: 18, name: '第17话', title: 'JOJO的到来', time: '2019-09-24', words: ['我爱你，笨蛋颖', '永远爱你'], img: [] },
       { id: 16, name: '第16话', title: '我们的小窝', time: '2020年那个元宵', words: ['我爱你，笨蛋颖', '永远爱你'], img: [] },
       { id: 15, name: '第15话', title: '飞向你的城市——结束了多年的异地', time: '2020-02-01', words: ['你好呀'], img: [] },
       { id: 14, name: '第14话', title: '重逢——多年未见的激动', time: '2020年那个元宵', words: ['我爱你，笨蛋颖', '永远爱你'], img: [] },
@@ -60,15 +96,15 @@ export const memory = [
   },
   {
     year: '2018',
-    timeline: [{ id: 12, name: '第12话', title: '你的名字', time: '2020-02-01', words: ['你好呀'], img: [] }]
+    timeline: [{ id: 12, name: '第12话', title: '你的名字', time: '2018-02-01', words: ['你好呀'], img: [] }]
   },
   {
     year: '2017',
-    timeline: [{ id: 11, name: '第11话', title: '两种生活', time: '2020-02-01', words: ['你好呀'], img: [] }]
+    timeline: [{ id: 11, name: '第11话', title: '两种生活', time: '2017-06-08', words: ['你好呀'], img: [] }]
   },
   {
     year: '2016',
-    timeline: [{ id: 10, name: '第10话', title: '痛苦的分别', time: '2020-02-01', words: ['你好呀'], img: [] }]
+    timeline: [{ id: 10, name: '第10话', title: '痛苦的分别', time: '2016-08-01', words: ['你好呀'], img: [] }]
   },
   {
     year: '2015',
@@ -90,10 +126,10 @@ export const memory = [
 ]
 
 export const memoryDays = [
-  { time: '2014-07-12', name: '交往纪念日', desc: '', img: 'index/1' },
-  { time: '1996-09-22', name: '笨蛋颖生日', desc: '', img: 'days/y' },
-  { time: '1993-11-12', name: '邵锁生日', desc: '', img: 'days/s' },
-  { time: '2019-09-15', name: 'jojo的生日', desc: '', img: 'index/2' },
-  { time: '2020-2-14', name: '情人节', desc: '', img: 'index/2' },
-  { time: '2020-8-14', name: '七夕节', desc: '', img: 'index/2' }
+  { time: '2014-07-12', name: '交往纪念日', desc: '', days: '', img: 'index/1' },
+  { time: '1996-09-22', name: '笨蛋颖生日', desc: '', days: '', img: 'days/y' },
+  { time: '1993-11-12', name: '邵锁生日', desc: '', days: '', img: 'days/s' },
+  { time: '2019-09-15', name: 'jojo的生日', desc: '', days: '', img: 'index/2' },
+  { time: '2020-02-14', name: '情人节', desc: '', days: '', img: 'index/2' },
+  { time: '2020-08-14', name: '七夕节', desc: '', days: '', img: 'index/2' }
 ]
