@@ -12,8 +12,8 @@
     .spaceboat
       img.spaceboat__icon(:src="require('@/assets/images/fly.png')")
       .spaceboat__opt
-        .spaceboat__opt--start(@click="$router.push({name: 'start'})") 启动时光机
-        .spaceboat__opt--skip(@click="$router.push({name: 'index'})") 回家
+        .spaceboat__opt--start(@click="$router.push({name: 'days'})") 启动时光机
+        .spaceboat__opt--skip(@click="$router.push({name: 'days'})") 回家
 </template>
 
 <script>

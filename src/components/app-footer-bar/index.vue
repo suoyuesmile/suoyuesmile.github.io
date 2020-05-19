@@ -8,30 +8,30 @@
     active-color="#ff3333"
     inactive-color="#000"
   )
-    van-tabbar-item(icon="home-o" @click="handleChangePage(0)") 时光机
-      app-icon(
-        :width="24"
-        :height="25"
-        slot="icon"
-        slot-scope="props"
-        :name="!props.active ? 'footer-bar/001' : 'footer-bar/011'"
-      )
-    van-tabbar-item(icon="home-o" @click="handleChangePage(1)") 爱生活
-      app-icon(
-        :width="24"
-        :height="25"
-        slot="icon"
-        slot-scope="props"
-        :name="!props.active ? 'footer-bar/002' : 'footer-bar/012'"
-      )
-    van-tabbar-item(icon="home-o" @click="handleChangePage(2)") 狗喵喵
-      app-icon(
-        :width="24"
-        :height="25"
-        slot="icon"
-        slot-scope="props"
-        :name="!props.active ? 'footer-bar/003' : 'footer-bar/013'"
-      )
+    //- van-tabbar-item(icon="home-o" @click="handleChangePage(0)") 时光机
+    //-   app-icon(
+    //-     :width="24"
+    //-     :height="25"
+    //-     slot="icon"
+    //-     slot-scope="props"
+    //-     :name="!props.active ? 'footer-bar/001' : 'footer-bar/011'"
+    //-   )
+    //- van-tabbar-item(icon="home-o" @click="handleChangePage(1)") 爱生活
+    //-   app-icon(
+    //-     :width="24"
+    //-     :height="25"
+    //-     slot="icon"
+    //-     slot-scope="props"
+    //-     :name="!props.active ? 'footer-bar/002' : 'footer-bar/012'"
+    //-   )
+    //- van-tabbar-item(icon="home-o" @click="handleChangePage(2)") 狗喵喵
+    //-   app-icon(
+    //-     :width="24"
+    //-     :height="25"
+    //-     slot="icon"
+    //-     slot-scope="props"
+    //-     :name="!props.active ? 'footer-bar/003' : 'footer-bar/013'"
+    //-   )
     van-tabbar-item(icon="home-o" @click="handleChangePage(3)") 纪念日
       app-icon(
         :width="24"
